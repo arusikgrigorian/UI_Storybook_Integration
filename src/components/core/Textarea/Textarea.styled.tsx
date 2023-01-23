@@ -9,9 +9,8 @@ const StyledTextarea = styled((props: Props) => <TextArea {...props} />)`
   ${InputBlock};
 
   ${(props) => {
-    const mode = props.mode;
-    const disabled = props.disabled;
-    const neutral = props.theme.colors.neutral;
+    const { mode, disabled, theme } = props;
+    const neutral = theme.colors.neutral;
 
     switch (mode) {
       case "light":

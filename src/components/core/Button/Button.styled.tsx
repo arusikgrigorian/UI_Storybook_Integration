@@ -8,13 +8,11 @@ const StyledButton = styled((props: Props) => <Button {...props} />)`
   padding: ${({ type }) => type === "link" && 0};
 
   ${(props) => {
-    const mode = props.mode;
-    const type = props.type;
-    const neutral = props.theme.colors.neutral;
-    const primary = props.theme.colors.primary;
+    const { mode, type, theme } = props;
+    const neutral = theme.colors.neutral;
+    const primary = theme.colors.primary;
 
     switch (mode) {
-      //<----------------------SHOULD BE REFACTORED----------------------->//
       case "light":
         return `
           border-color: ${
@@ -104,7 +102,6 @@ const StyledButton = styled((props: Props) => <Button {...props} />)`
           }
         `;
       case "dark":
-        //<----------------------SHOULD BE REFACTORED----------------------->//
         return `
           border-color: ${
             type === "default"

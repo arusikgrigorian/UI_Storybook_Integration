@@ -1,7 +1,7 @@
 import React, { ChangeEvent } from "react";
 import { ConfigProvider, Space } from "antd";
 import {
-  ArrowRightOutlined,
+  ArrowLeftOutlined,
   ExclamationCircleOutlined,
   PlusOutlined,
 } from "@ant-design/icons";
@@ -34,14 +34,20 @@ function App(props: AddonProps) {
 
   //Button
   const type = "primary";
+  const htmlType = "button";
   const iconBefore = <PlusOutlined />;
-  const iconAfter = <ArrowRightOutlined />;
+  const iconAfter = <ArrowLeftOutlined />;
 
   const handleChange = (e: ChangeEvent<ChangeTypes>): void => {
     console.log(e.target.value);
   };
 
-  const handleSelect = (e: string | number | LabeledValue) => console.log(e);
+  const handleSelect = (e: string | number | LabeledValue): void =>
+    console.log(e);
+
+  const handleClick = (): void => {
+    console.log("Button was clicked!");
+  };
 
   return (
     <ConfigProvider
@@ -92,9 +98,11 @@ function App(props: AddonProps) {
               size={size}
               mode={mode}
               type={type}
+              htmlType={htmlType}
               disabled={disabled}
               iconBefore={iconBefore}
               iconAfter={iconAfter}
+              onClick={handleClick}
             >
               Create New
             </Button>
@@ -104,4 +112,5 @@ function App(props: AddonProps) {
     </ConfigProvider>
   );
 }
+
 export default App;

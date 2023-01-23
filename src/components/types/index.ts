@@ -1,12 +1,8 @@
-import React, { ChangeEventHandler } from "react";
+import React, { ChangeEventHandler, MouseEventHandler } from "react";
 import { LabeledValue } from "antd/es/select";
 
 export type ChangeTypes = HTMLInputElement | HTMLTextAreaElement;
-export interface EventsProps {
-  onChange?: ChangeEventHandler<ChangeTypes> | undefined;
-  onOptionSelect?: (e: string | number | LabeledValue) => void;
-}
-
+export type ClickTypes = HTMLAnchorElement | HTMLButtonElement;
 export type IconType =
   | string
   | number
@@ -14,6 +10,13 @@ export type IconType =
   | React.ReactElement<any, string | React.JSXElementConstructor<any>>
   | React.ReactFragment
   | null;
+
+export interface EventsProps {
+  onChange?: ChangeEventHandler<ChangeTypes> | undefined;
+  onOptionSelect?: (e: string | number | LabeledValue) => void;
+  onClick?: MouseEventHandler<ClickTypes>;
+}
+
 export interface StyleGeneralProps {
   flex_direction?: string;
   justify_content?: string;
@@ -52,6 +55,7 @@ export interface OptionsProps {
   label: string;
   value: string;
 }
+
 export interface AddonProps {
   withAddonAfter?: boolean;
   options?: OptionsProps[];

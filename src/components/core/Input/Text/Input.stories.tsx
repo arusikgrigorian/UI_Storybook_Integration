@@ -92,11 +92,15 @@ export default {
     },
     onChange: {
       description: `( ) => void`,
-      defaultValue: { summary: () => {} },
+      defaultValue: {
+        summary: () => {},
+      },
     },
     onOptionSelect: {
       description: `( ) => void`,
-      defaultValue: { summary: () => {} },
+      defaultValue: {
+        summary: () => {},
+      },
     },
   },
 } as ComponentMeta<typeof Input>;

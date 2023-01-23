@@ -6,7 +6,7 @@ export const StyledDropdown = styled.div<ModeProps>`
     color: ${(props) => props.theme.colors.neutral["gray-7"]};
 
     & .rc-virtual-list-holder-inner {
-      & > :not(:last-child){
+      & > :not(:last-child) {
         margin-bottom: 4px;
       }
     }

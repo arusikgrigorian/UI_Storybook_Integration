@@ -36,7 +36,9 @@ export default {
     },
     onChange: {
       description: `( ) => void`,
-      defaultValue: { summary: () => {} },
+      defaultValue: {
+        summary: () => {},
+      },
     },
   },
 } as ComponentMeta<typeof Textarea>;

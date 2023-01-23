@@ -1,19 +1,27 @@
 import { PropsWithChildren, ReactNode } from "react";
-import { ButtonProps } from "antd";
+import { BaseButtonProps, NativeButtonProps } from "antd/es/button/button";
 import StyledButton from "./Button.styled";
-import { ModeProps } from "../../types";
+import { EventsProps, ModeProps } from "../../types";
 
-export type Props = ModeProps &
-  ButtonProps & { iconBefore?: ReactNode; iconAfter?: ReactNode };
+export type Props = BaseButtonProps &
+  NativeButtonProps &
+  ModeProps &
+  EventsProps & {
+    iconBefore?: ReactNode;
+    iconAfter?: ReactNode;
+  };
+
 const Button = (props: PropsWithChildren<Props>) => {
   const {
     size = "middle",
     mode = "light",
     type = "default",
+    htmlType = "button",
     disabled = false,
     iconBefore = null,
     iconAfter = null,
     children = null,
+    onClick = () => {},
   } = props;
 
   return (
@@ -21,8 +29,10 @@ const Button = (props: PropsWithChildren<Props>) => {
       size={size}
       mode={mode}
       type={type}
+      htmlType={htmlType}
       disabled={disabled}
       icon={iconBefore}
+      onClick={onClick}
     >
       {children}
       {iconAfter}
