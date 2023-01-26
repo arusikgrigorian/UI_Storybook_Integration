@@ -1,5 +1,6 @@
-import React, { ChangeEventHandler, MouseEventHandler } from "react";
+import React, {ChangeEventHandler, MouseEventHandler, ReactNode} from 'react';
 import { LabeledValue } from "antd/es/select";
+import {ButtonProps} from 'antd/es/button/button';
 
 export type ChangeTypes = HTMLInputElement | HTMLTextAreaElement;
 export type ClickTypes = HTMLAnchorElement | HTMLButtonElement;
@@ -10,6 +11,12 @@ export type IconType =
   | React.ReactElement<any, string | React.JSXElementConstructor<any>>
   | React.ReactFragment
   | null;
+
+export type ButtonIconProps = {
+  iconBefore?: ReactNode;
+  iconAfter?: ReactNode;
+}
+export type ButtonType = ButtonProps & ModeProps
 
 export interface EventsProps {
   onChange?: ChangeEventHandler<ChangeTypes> | undefined;
@@ -61,3 +68,5 @@ export interface AddonProps {
   options?: OptionsProps[];
   addonAfterDefaultOption?: string;
 }
+
+

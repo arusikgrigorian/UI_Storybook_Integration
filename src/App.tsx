@@ -1,5 +1,5 @@
 import React, { ChangeEvent } from "react";
-import { ConfigProvider, Space } from "antd";
+import { Space } from "antd";
 import {
   ArrowLeftOutlined,
   ExclamationCircleOutlined,
@@ -8,9 +8,11 @@ import {
 import Wrapper from "./components/core/Wrapper";
 import Input from "./components/core/Input/Text";
 import Textarea from "./components/core/Textarea";
-import Button from "./components/core/Button";
+import Button from "./components/core/Button/Basic";
 import { AddonProps, ChangeTypes } from "./components/types";
 import { LabeledValue } from "antd/es/select";
+import IconButton from './components/core/Button/Icon';
+import SortIcon from './components/core/Icons/SortIcon';
 
 function App(props: AddonProps) {
   const { options } = props;
@@ -38,6 +40,9 @@ function App(props: AddonProps) {
   const iconBefore = <PlusOutlined />;
   const iconAfter = <ArrowLeftOutlined />;
 
+  //Icons Button
+  const icon = <SortIcon />;
+
   const handleChange = (e: ChangeEvent<ChangeTypes>): void => {
     console.log(e.target.value);
   };
@@ -50,21 +55,6 @@ function App(props: AddonProps) {
   };
 
   return (
-    <ConfigProvider
-      theme={{
-        token: {
-          // colorPrimary: theme.colors.neutral["gray-6"],
-          // colorText: theme.colors.neutral["gray-9"],
-          // lineWidth: 1,
-          // lineType: lineType,
-          // colorBorder: theme.colors.neutral["gray-2"],
-          // borderRadius: 8,
-          // colorPrimaryHover: theme.colors.neutral["gray-7"],
-          // controlOutline: "none",
-          // colorBgContainer: theme.colors.neutral["gray-2"],
-        },
-      }}
-    >
       <Wrapper mode={mode}>
         <Wrapper mode={mode} flex_direction="column" width="50%">
           <Space direction="vertical" style={{ width: "100%" }}>
@@ -106,10 +96,10 @@ function App(props: AddonProps) {
             >
               Create New
             </Button>
+            <IconButton mode={mode} disabled={disabled} icon={icon} onClick={handleClick}/>
           </Space>
         </Wrapper>
       </Wrapper>
-    </ConfigProvider>
   );
 }
 

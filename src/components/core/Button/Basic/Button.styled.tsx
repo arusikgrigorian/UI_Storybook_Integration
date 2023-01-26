@@ -7,6 +7,10 @@ const StyledButton = styled((props: Props) => <Button {...props} />)`
   box-shadow: none !important;
   padding: ${({ type }) => type === "link" && 0};
 
+  & .ant-wave {
+    display: none;
+  }
+
   ${(props) => {
     const { mode, type, theme } = props;
     const neutral = theme.colors.neutral;

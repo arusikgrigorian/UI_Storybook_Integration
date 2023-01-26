@@ -1,15 +1,8 @@
-import { PropsWithChildren, ReactNode } from "react";
-import { BaseButtonProps, NativeButtonProps } from "antd/es/button/button";
+import { PropsWithChildren } from "react";
 import StyledButton from "./Button.styled";
-import { EventsProps, ModeProps } from "../../types";
+import {ButtonIconProps, ButtonType} from '../../../types';
 
-export type Props = BaseButtonProps &
-  NativeButtonProps &
-  ModeProps &
-  EventsProps & {
-    iconBefore?: ReactNode;
-    iconAfter?: ReactNode;
-  };
+export type Props = ButtonType & ButtonIconProps;
 
 const Button = (props: PropsWithChildren<Props>) => {
   const {

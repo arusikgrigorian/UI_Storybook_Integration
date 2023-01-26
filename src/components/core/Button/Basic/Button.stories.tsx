@@ -1,8 +1,8 @@
 import { ArrowLeftOutlined, PlusOutlined } from "@ant-design/icons";
-import Button from "./index";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
-import Wrapper from "../Wrapper";
 import { action } from "@storybook/addon-actions";
+import Wrapper from "../../Wrapper";
+import Button from "./index";
 
 const icons = {
   IconFirst: <PlusOutlined />,
@@ -11,40 +11,45 @@ const icons = {
 };
 
 export default {
-  title: "Components/Button",
+  title: "Components/Button/Basic",
   component: Button,
   argTypes: {
     size: {
-      description: `"large"| "middle" | "small"`,
+      description: `"large" | "middle" | "small"`,
       defaultValue: { summary: `"middle"` },
+      options: ["large", "middle", "small"],
       control: { type: "select" },
     },
     mode: {
       description: `"light" | "dark"`,
       defaultValue: { summary: `"light"` },
+      options: ["light", "dark"],
       control: { type: "select" },
     },
     type: {
       description: `"default" | "primary" | "dashed" | "link"`,
       defaultValue: { summary: `"default"` },
+      options: ["default", "primary", "dashed", "link"],
       control: { type: "select" },
     },
     htmlType: {
       description: `"button" | "submit" | "reset"`,
       defaultValue: { summary: `"button"` },
+      options: ["button", "submit", "reset"],
       control: { type: "select" },
     },
     disabled: {
       description: "boolean",
       defaultValue: { summary: false },
-      option: { type: "select" },
     },
     iconBefore: {
       description: "ReactNode",
       defaultValue: { summary: "null" },
       options: Object.keys(icons),
       mapping: icons,
-      control: { type: "select" },
+      control: {
+        type: "select",
+      },
     },
     children: {
       description: "ReactNode",
@@ -55,10 +60,12 @@ export default {
       defaultValue: { summary: "null" },
       options: Object.keys(icons),
       mapping: icons,
-      control: { type: "select" },
+      control: {
+        type: "select",
+      },
     },
     onClick: {
-      description: `( ) => {}`,
+      description: `( ) => void`,
       defaultValue: {
         summary: () => {},
       },
