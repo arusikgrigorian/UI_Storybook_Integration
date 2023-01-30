@@ -12,9 +12,10 @@ const StyledButton = styled((props: Props) => <Button {...props} />)`
   }
 
   ${(props) => {
-    const { mode, type, theme } = props;
+    const { mode, type, danger, theme } = props;
     const neutral = theme.colors.neutral;
     const primary = theme.colors.primary;
+    //const dangerous = theme.colors.special.danger;
 
     switch (mode) {
       case "light":

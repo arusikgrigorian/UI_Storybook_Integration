@@ -10,6 +10,8 @@ const icons = {
   Non: null,
 };
 
+const labels = { Label: "Create New", Non: null };
+
 export default {
   title: "Components/Button/Basic",
   component: Button,
@@ -18,6 +20,12 @@ export default {
       description: `"large" | "middle" | "small"`,
       defaultValue: { summary: `"middle"` },
       options: ["large", "middle", "small"],
+      control: { type: "select" },
+    },
+    shape: {
+      description: `"default" | "circle" | "round"`,
+      defaultValue: { summary: `"default"` },
+      options: ["default", "circle", "round"],
       control: { type: "select" },
     },
     mode: {
@@ -54,6 +62,11 @@ export default {
     children: {
       description: "ReactNode",
       defaultValue: { summary: "null" },
+      options: Object.keys(labels),
+      mapping: labels,
+      control: {
+        type: "select",
+      },
     },
     iconAfter: {
       description: "ReactNode",
@@ -89,6 +102,7 @@ export const Link = Template.bind({});
 
 Default.args = {
   size: "middle",
+  shape: "default",
   mode: "light",
   type: "default",
   htmlType: "button",

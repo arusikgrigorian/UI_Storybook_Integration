@@ -11,8 +11,8 @@ import Textarea from "./components/core/Textarea";
 import Button from "./components/core/Button/Basic";
 import { AddonProps, ChangeTypes } from "./components/types";
 import { LabeledValue } from "antd/es/select";
-import IconButton from './components/core/Button/Icon';
-import SortIcon from './components/core/Icons/SortIcon';
+import IconButton from "./components/core/Button/Icon";
+import SortIcon from "./components/core/Icons/SortIcon";
 
 function App(props: AddonProps) {
   const { options } = props;
@@ -35,8 +35,10 @@ function App(props: AddonProps) {
   const showTooltipArrow = true;
 
   //Button
-  const type = "primary";
+  const shape = "default";
+  const type = "default";
   const htmlType = "button";
+  const danger = true;
   const iconBefore = <PlusOutlined />;
   const iconAfter = <ArrowLeftOutlined />;
 
@@ -55,51 +57,58 @@ function App(props: AddonProps) {
   };
 
   return (
-      <Wrapper mode={mode}>
-        <Wrapper mode={mode} flex_direction="column" width="50%">
-          <Space direction="vertical" style={{ width: "100%" }}>
-            <Input
-              size={size}
-              mode={mode}
-              state={inputState}
-              disabled={disabled}
-              withPrefixTooltip={withPrefixTooltip}
-              prefixTooltipTitle={prefixTooltipTitle}
-              prefix={prefix}
-              placeholder={placeholder}
-              withSuffixTooltip={withSuffixTooltip}
-              suffixTooltipTitle={suffixTooltipTitle}
-              suffix={suffix}
-              showTooltipArrow={showTooltipArrow}
-              withAddonAfter={withAddonAfter}
-              options={addonAfterOptions}
-              addonAfterDefaultOption={addonAfterDefaultOption}
-              onChange={handleChange}
-              onOptionSelect={handleSelect}
-            />
-            <Textarea
-              mode={mode}
-              state={inputState}
-              disabled={disabled}
-              placeholder={placeholder}
-              onChange={handleChange}
-            />
-            <Button
-              size={size}
-              mode={mode}
-              type={type}
-              htmlType={htmlType}
-              disabled={disabled}
-              iconBefore={iconBefore}
-              iconAfter={iconAfter}
-              onClick={handleClick}
-            >
-              Create New
-            </Button>
-            <IconButton mode={mode} disabled={disabled} icon={icon} onClick={handleClick}/>
-          </Space>
-        </Wrapper>
+    <Wrapper mode={mode}>
+      <Wrapper mode={mode} flex_direction="column" width="50%">
+        <Space direction="vertical" style={{ width: "100%" }}>
+          <Input
+            size={size}
+            mode={mode}
+            state={inputState}
+            disabled={disabled}
+            withPrefixTooltip={withPrefixTooltip}
+            prefixTooltipTitle={prefixTooltipTitle}
+            prefix={prefix}
+            placeholder={placeholder}
+            withSuffixTooltip={withSuffixTooltip}
+            suffixTooltipTitle={suffixTooltipTitle}
+            suffix={suffix}
+            showTooltipArrow={showTooltipArrow}
+            withAddonAfter={withAddonAfter}
+            options={addonAfterOptions}
+            addonAfterDefaultOption={addonAfterDefaultOption}
+            onChange={handleChange}
+            onOptionSelect={handleSelect}
+          />
+          <Textarea
+            mode={mode}
+            state={inputState}
+            disabled={disabled}
+            placeholder={placeholder}
+            onChange={handleChange}
+          />
+          <Button
+            size={size}
+            shape={shape}
+            mode={mode}
+            type={"default"}
+            htmlType={htmlType}
+            disabled={disabled}
+            danger={danger}
+            iconBefore={iconBefore}
+            iconAfter={iconAfter}
+            onClick={handleClick}
+          >
+            Create New
+          </Button>
+          <IconButton
+            mode={mode}
+            disabled={disabled}
+            icon={icon}
+            onClick={handleClick}
+          />
+        </Space>
       </Wrapper>
+    </Wrapper>
   );
 }
 

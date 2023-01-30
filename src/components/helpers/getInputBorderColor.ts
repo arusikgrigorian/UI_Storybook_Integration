@@ -12,13 +12,13 @@ const getInputBorderColor = (
 
   switch (state) {
     case "error":
-      color = theme.colors.special.red;
+      color = theme.colors.special.danger['red-1'];
       break;
     case "warning":
-      color = theme.colors.special.orange;
+      color = theme.colors.special.warning['orange-1'];
       break;
     case "success":
-      color = theme.colors.special.green;
+      color = theme.colors.special.success['green-1'];
       break;
     case "dashed":
       color = dashedColor;

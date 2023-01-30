@@ -40,10 +40,19 @@ export const theme = {
       "orange-10": "#662900",
     },
     special: {
-      red: "#EB5757",
-      orange: "#F2994A",
-      yellow: "#F2C94C",
-      green: "#219653",
+      danger: {
+        "red-1" : "#EB5757",
+        "red-2" : "#FF7875",
+        "red-3" : "#F5222D",
+        "red-4": "#CF1322"
+      },
+      warning: {
+        "yellow-1": "#F2C94C",
+        "orange-1": "#F2994A"
+      },
+      success:{
+        "green-1": "#219653"
+      },
     },
   },
   fontSizes: {
