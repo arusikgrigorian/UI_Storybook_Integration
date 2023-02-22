@@ -10,14 +10,19 @@ const onFinishFailed = (errorInfo: any) => {
   console.log("Failed:", errorInfo);
 };
 
-const usernameRules = getValidationRules(
-  ["required-username", "minimum-5", "maximum-10", "type-email", "whitespace"],
-  "Please input your username"
-);
-const passwordRules = getValidationRules(
-  ["required-password", "minimum-8", "maximum-15", "whitespace"],
-  "Please input your password"
-);
+const usernameRules = getValidationRules([
+  "required-username",
+  "minimum-5",
+  "maximum-10",
+  "type-email",
+  "whitespace",
+]);
+const passwordRules = getValidationRules([
+  "required-password",
+  "minimum-8",
+  "maximum-15",
+  "whitespace",
+]);
 
 const FormValidation: React.FC = () => (
   <Form

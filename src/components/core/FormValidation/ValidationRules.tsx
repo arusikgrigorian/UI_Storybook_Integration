@@ -1,4 +1,4 @@
-const getValidationRules = (rules: any, message: any) => {
+const getValidationRules = (rules: any) => {
   const arr: any = [];
   rules.forEach((rule: any) => {
     switch (true) {
